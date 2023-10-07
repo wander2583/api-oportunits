@@ -1,14 +1,12 @@
 package main
 
 import (
-	"fmt"
-
 	"github.com/wander2583/api-oportunits/config"
 	"github.com/wander2583/api-oportunits/router"
 )
 
 var (
-	logger config.Logger
+	logger *config.Logger
 )
 
 func main() {
@@ -17,7 +15,6 @@ func main() {
 	// Initialize Configs
 	err := config.Init()
 	if err != nil {
-		panic(err)
 		logger.Errorf("Config initialization error: %v", err)
 		return
 	}
