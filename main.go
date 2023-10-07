@@ -7,13 +7,18 @@ import (
 	"github.com/wander2583/api-oportunits/router"
 )
 
+var (
+	logger config.Logger
+)
+
 func main() {
+	logger = config.GetLogger("main")
 
 	// Initialize Configs
 	err := config.Init()
 	if err != nil {
 		panic(err)
-		fmt.Println(err)
+		logger.Errorf("Config initialization error: %v", err)
 		return
 	}
 
