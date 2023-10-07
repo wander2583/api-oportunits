@@ -1,5 +1,9 @@
 package main
 
+import (
+	"github.com/wander2583/api-oportunits/router"
+)
+
 func main() {
-	print("Ola Mundo")
+	router.Initialize()
 }
