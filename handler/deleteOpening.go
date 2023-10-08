@@ -16,7 +16,7 @@ func DeleteOpeningHandler(ctx *gin.Context) {
 	}
 	opening := schemas.Opening{}
 	if err := db.First(&opening, id).Error; err != nil {
-		sendError(ctx, http.StatusFound, fmt.Sprintf("opening with id: %s not found", id))
+		sendError(ctx, http.StatusNotFound, fmt.Sprintf("opening with id: %s not found", id))
 	}
 
 	if err := db.Delete(&opening).Error; err != nil {
